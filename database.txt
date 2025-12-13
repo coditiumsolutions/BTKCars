@@ -1,0 +1,90 @@
+================================================================================
+DATABASE CONNECTION INFORMATION
+================================================================================
+
+Connection String:
+psql 'postgresql://neondb_owner:npg_Wypfn4sTeEV5@ep-royal-violet-a1jnzx8b-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
+
+.NET Connection String:
+Host=ep-royal-violet-a1jnzx8b-pooler.ap-southeast-1.aws.neon.tech;Database=neondb;Username=neondb_owner;Password=npg_Wypfn4sTeEV5;SSL Mode=Require;Trust Server Certificate=true
+
+================================================================================
+DATABASE SCHEMA - SQL CREATION STATEMENTS
+================================================================================
+
+-- Users Table
+CREATE TABLE users (
+    id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password TEXT NOT NULL,
+    role VARCHAR(50) NOT NULL DEFAULT 'user',
+    createdat TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    updatedat TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+-- Cars For Sale Table
+CREATE TABLE carsforsale (
+    id BIGSERIAL PRIMARY KEY,
+    make VARCHAR(100) NOT NULL,
+    model VARCHAR(100) NOT NULL,
+    year INT,
+    price NUMERIC(12,2) NOT NULL,
+    mileage INT,
+    transmission VARCHAR(50),
+    fueltype VARCHAR(50),
+    description TEXT,
+    imageurl TEXT,
+    createdat TIMESTAMPTZ DEFAULT NOW(),
+    updatedat TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Indexes for better performance
+CREATE INDEX idx_users_email ON users(email);
+CREATE INDEX idx_carsforsale_make ON carsforsale(make);
+CREATE INDEX idx_carsforsale_model ON carsforsale(model);
+CREATE INDEX idx_carsforsale_year ON carsforsale(year);
+CREATE INDEX idx_carsforsale_price ON carsforsale(price);
+
+================================================================================
+TEST DATA
+================================================================================
+
+-- Insert test user (password: password123)
+INSERT INTO users (email, password, role)
+VALUES (
+    'test@example.com',
+    '$2a$11$zQh0YnXqRGJxVvC0z.Nd4.rKxJGvVK6PxJ5LqW5yGhGqKIJ2HqW4K',
+    'user'
+)
+ON CONFLICT (email) DO NOTHING;
+
+-- Insert sample cars
+INSERT INTO carsforsale (make, model, year, price, mileage, transmission, fueltype, description, imageurl)
+VALUES
+    ('Toyota', 'Camry', 2022, 28999.99, 15000, 'Automatic', 'Gasoline', 'Well-maintained Toyota Camry with low mileage', 'https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=800'),
+    ('Honda', 'Accord', 2021, 26500.00, 22000, 'Automatic', 'Gasoline', 'Reliable Honda Accord in excellent condition', 'https://images.unsplash.com/photo-1590362891991-f776e747a588?w=800'),
+    ('Tesla', 'Model 3', 2023, 45000.00, 5000, 'Automatic', 'Electric', 'Nearly new Tesla Model 3 with autopilot', 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=800'),
+    ('Ford', 'Mustang', 2020, 32000.00, 18000, 'Manual', 'Gasoline', 'Sporty Ford Mustang GT with premium features', 'https://images.unsplash.com/photo-1584345604476-8ec5f5f6a9f0?w=800'),
+    ('BMW', '3 Series', 2022, 42000.00, 12000, 'Automatic', 'Gasoline', 'Luxury BMW 3 Series with full options', 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800');
+
+================================================================================
+USEFUL QUERIES
+================================================================================
+
+-- View all users
+SELECT * FROM users;
+
+-- View all cars for sale
+SELECT * FROM carsforsale ORDER BY createdat DESC;
+
+-- Count cars by make
+SELECT make, COUNT(*) as count FROM carsforsale GROUP BY make;
+
+-- Find cars within price range
+SELECT * FROM carsforsale WHERE price BETWEEN 20000 AND 35000 ORDER BY price;
+
+-- Update car price
+UPDATE carsforsale SET price = 27999.99, updatedat = NOW() WHERE id = 1;
+
+-- Delete a car
+DELETE FROM carsforsale WHERE id = 1;

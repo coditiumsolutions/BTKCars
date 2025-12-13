@@ -1,0 +1,6 @@
+@BtkCarsApi_HostAddress = http://localhost:5115
+
+GET {{BtkCarsApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

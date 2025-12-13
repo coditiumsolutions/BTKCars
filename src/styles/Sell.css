@@ -1,0 +1,126 @@
+/* Sell Page Contact Section */
+
+.sell-contact-section {
+  margin-top: 3rem;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(33, 150, 243, 0.3);
+}
+
+.sell-contact-title {
+  font-size: 2.5rem;
+  color: white;
+  text-align: center;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.sell-contact-subtitle {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.sell-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.sell-contact-card {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.sell-contact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+
+.sell-contact-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+  border-radius: 50%;
+  margin-bottom: 1.25rem;
+}
+
+.sell-contact-icon {
+  width: 32px;
+  height: 32px;
+  color: white;
+}
+
+.sell-contact-card-title {
+  font-size: 1.25rem;
+  color: var(--primary-dark);
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.sell-contact-card-text {
+  font-size: 0.95rem;
+  color: var(--text-gray);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.sell-contact-link {
+  display: block;
+  font-size: 1rem;
+  color: var(--accent-blue);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.sell-contact-link:hover {
+  color: #1976D2;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sell-contact-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .sell-contact-title {
+    font-size: 2rem;
+  }
+
+  .sell-contact-subtitle {
+    font-size: 1rem;
+  }
+
+  .sell-contact-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .sell-contact-card {
+    padding: 1.5rem;
+  }
+
+  .sell-contact-icon-wrapper {
+    width: 56px;
+    height: 56px;
+  }
+
+  .sell-contact-icon {
+    width: 28px;
+    height: 28px;
+  }
+}

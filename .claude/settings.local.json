@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tailwindcss:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npm install:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(npm run build:*)",
+      "Bash(dotnet:*)",
+      "Bash(curl:*)",
+      "Bash(psql \"postgresql://neondb_owner:npg_Wypfn4sTeEV5@ep-royal-violet-a1jnzx8b-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require\" -c \"INSERT INTO users (email, password, role) VALUES (''test@example.com'', ''$2a$11$zQh0YnXqRGJxVvC0z.Nd4.rKxJGvVK6PxJ5LqW5yGhGqKIJ2HqW4K'', ''user'') ON CONFLICT (email) DO NOTHING;\")",
+      "Bash(timeout /t 3 /nobreak)",
+      "Bash(nul)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
