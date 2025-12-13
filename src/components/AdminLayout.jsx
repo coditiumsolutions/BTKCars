@@ -61,11 +61,10 @@ const AdminLayout = ({ children }) => {
       <aside className={`admin-sidebar ${sidebarOpen ? 'open' : ''}`}>
         <div className="admin-sidebar-header">
           <div className="admin-logo">BTK Cars</div>
-          <div className="admin-logo-subtitle">Admin Panel</div>
+          <div className="admin-user-name">👤 {userEmail}</div>
         </div>
 
         <div className="admin-user-section">
-          <div className="admin-user-name">👤 {userEmail}</div>
           <button onClick={handleLogout} className="admin-logout-btn">
             Logout
           </button>

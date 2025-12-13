@@ -45,3 +45,4 @@ D:\ClaudeCode\btk_cars\api\obj\Debug\net9.0\BtkCarsApi.pdb
 D:\ClaudeCode\btk_cars\api\obj\Debug\net9.0\BtkCarsApi.genruntimeconfig.cache
 D:\ClaudeCode\btk_cars\api\obj\Debug\net9.0\ref\BtkCarsApi.dll
 D:\ClaudeCode\btk_cars\api\bin\Debug\net9.0\BtkCarsApi.staticwebassets.runtime.json
+D:\ClaudeCode\btk_cars\api\obj\Debug\net9.0\BtkCarsApi.sourcelink.json

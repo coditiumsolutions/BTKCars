@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BtkCarsApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+758b40c5dd1a93bb3356331525e2a5ade9c9bdbc")]
 [assembly: System.Reflection.AssemblyProductAttribute("BtkCarsApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BtkCarsApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
