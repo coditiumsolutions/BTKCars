@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import SEO from '../components/SEO';
 import '../styles/Pages.css';
 import '../styles/FeaturedCars.css';
 import { carsApi } from '../services/carsApi';
+import { getServerBaseUrl } from '../services/config';
 
 const Buy = () => {
   const navigate = useNavigate();
@@ -30,12 +32,10 @@ const Buy = () => {
 
   // Helper function to format price
   const formatPrice = (price) => {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
+    return new Intl.NumberFormat('en-PK', {
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
-    }).format(price);
+    }).format(price) + ' PKR';
   };
 
   // Helper function to format mileage
@@ -52,11 +52,17 @@ const Buy = () => {
     if (imageUrl.startsWith('http')) {
       return imageUrl;
     }
-    return `http://localhost:5115${imageUrl}`;
+    return `${getServerBaseUrl()}${imageUrl}`;
   };
 
   return (
     <div className="page">
+      <SEO
+        title="Buy Quality Cars in Bahria Town Karachi"
+        description="Browse our extensive inventory of quality vehicles for sale in Bahria Town Karachi. Find your perfect car from our premium selection at BTK Cars."
+        keywords="buy cars Bahria Town, cars for sale Karachi, quality vehicles, used cars Bahria Town Karachi, car inventory Pakistan"
+        canonical="/buy"
+      />
       <div className="page-container">
         <h1 className="page-title buy-page-title">Buy a Car</h1>
         <p className="page-subtitle">
@@ -100,6 +106,7 @@ const Buy = () => {
                     <div className="car-card-year">
                       {car.year || 'N/A'}
                     </div>
+                    <div className="car-sold-badge">SOLD</div>
                   </div>
 
                   {/* Car Details */}

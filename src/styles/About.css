@@ -1,23 +1,24 @@
 /* About Page - Our Story Section */
 
 .page-card {
-  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  background: #F7BE29;
   border-radius: 12px;
   padding: 2.5rem;
-  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(247, 190, 41, 0.4);
   margin-bottom: 2rem;
-  border: 1px solid rgba(255, 215, 0, 0.3);
+  border: 3px solid #F7BE29;
 }
 
 .page-section-title {
-  font-size: 1.75rem;
-  color: #FFD700;
+  font-size: 2.5rem;
+  color: #000000;
   margin-bottom: 1.5rem;
   font-weight: 700;
 }
 
 .page-text {
-  color: #DAA520;
+  color: #000000;
   line-height: 1.8;
   margin-bottom: 1.5rem;
+  font-size: 1.25rem;
 }

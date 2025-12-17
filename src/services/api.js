@@ -1,9 +1,9 @@
-const API_BASE_URL = 'http://localhost:5115/api';
+import { getApiBaseUrl } from './config';
 
 export const authApi = {
   login: async (email, password) => {
     try {
-      const response = await fetch(`${API_BASE_URL}/auth/login`, {
+      const response = await fetch(`${getApiBaseUrl()}/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

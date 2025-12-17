@@ -27,21 +27,11 @@ const AdminLayout = ({ children }) => {
   };
 
   const menuItems = [
-    {
-      section: 'Main',
-      items: [
-        { icon: '🏠', label: 'Dashboard', path: '/admin/dashboard' },
-        { icon: '🚗', label: 'Manage Cars', path: '/admin/cars' },
-        { icon: '➕', label: 'Add Car', path: '/admin/cars/add' },
-      ]
-    },
-    {
-      section: 'Settings',
-      items: [
-        { icon: '👥', label: 'Users', path: '/admin/users' },
-        { icon: '⚙️', label: 'Settings', path: '/admin/settings' },
-      ]
-    }
+    { label: 'Dashboard', path: '/admin/dashboard' },
+    { label: 'Manage Cars', path: '/admin/cars' },
+    { label: 'Add Car', path: '/admin/cars/add' },
+    { label: 'Users', path: '/admin/users' },
+    { label: 'Settings', path: '/admin/settings' },
   ];
 
   return (
@@ -71,22 +61,16 @@ const AdminLayout = ({ children }) => {
         </div>
 
         <nav className="admin-nav">
-          {menuItems.map((section, sectionIndex) => (
-            <div key={sectionIndex} className="admin-nav-section">
-              <div className="admin-nav-section-title">{section.section}</div>
-              {section.items.map((item, itemIndex) => (
-                <div
-                  key={itemIndex}
-                  className={`admin-nav-item ${isActive(item.path) ? 'active' : ''}`}
-                  onClick={() => {
-                    navigate(item.path);
-                    closeSidebar();
-                  }}
-                >
-                  <span className="admin-nav-icon">{item.icon}</span>
-                  <span className="admin-nav-label">{item.label}</span>
-                </div>
-              ))}
+          {menuItems.map((item, index) => (
+            <div
+              key={index}
+              className={`admin-nav-item ${isActive(item.path) ? 'active' : ''}`}
+              onClick={() => {
+                navigate(item.path);
+                closeSidebar();
+              }}
+            >
+              <span className="admin-nav-label">{item.label}</span>
             </div>
           ))}
         </nav>

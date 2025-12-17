@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import carsApi from '../services/carsApi';
+import { getServerBaseUrl } from '../services/config';
 import '../styles/ManageCars.css';
 
 const ManageCars = () => {
@@ -43,18 +44,16 @@ const ManageCars = () => {
   };
 
   const formatPrice = (price) => {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
+    return new Intl.NumberFormat('en-PK', {
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
-    }).format(price);
+    }).format(price) + ' PKR';
   };
 
   const getImageUrl = (imageUrl) => {
     if (!imageUrl) return 'https://via.placeholder.com/400x250?text=No+Image';
     if (imageUrl.startsWith('http')) return imageUrl;
-    return `http://localhost:5115${imageUrl}`;
+    return `${getServerBaseUrl()}${imageUrl}`;
   };
 
   if (loading) {

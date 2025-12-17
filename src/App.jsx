@@ -15,6 +15,8 @@ import AdminHome from './pages/AdminHome';
 import ManageCars from './pages/ManageCars';
 import CarForm from './pages/CarForm';
 import Dashboard from './pages/Dashboard';
+import CarsInBahriaTown from './pages/CarsInBahriaTown';
+import SalePurchaseBahriaTown from './pages/SalePurchaseBahriaTown';
 
 function App() {
   return (
@@ -80,6 +82,24 @@ function App() {
             <TopBar />
             <main className="flex-grow">
               <Login />
+            </main>
+            <Footer />
+          </div>
+        } />
+        <Route path="/cars-in-bahria-town" element={
+          <div className="min-h-screen flex flex-col">
+            <TopBar />
+            <main className="flex-grow">
+              <CarsInBahriaTown />
+            </main>
+            <Footer />
+          </div>
+        } />
+        <Route path="/sale-purchase-cars-bahria-town" element={
+          <div className="min-h-screen flex flex-col">
+            <TopBar />
+            <main className="flex-grow">
+              <SalePurchaseBahriaTown />
             </main>
             <Footer />
           </div>

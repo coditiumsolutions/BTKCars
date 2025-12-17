@@ -164,7 +164,7 @@ const Contact = () => {
                   </svg>
                   <div className="contact-info-content">
                     <h3>Email</h3>
-                    <p>Yasirhussainofficial1@gmail.com</p>
+                    <p>info@btkcars.com</p>
                   </div>
                 </div>
               </div>

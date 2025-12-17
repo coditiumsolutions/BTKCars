@@ -16,7 +16,22 @@
       "Bash(git commit:*)",
       "Bash(git remote add:*)",
       "Bash(git branch:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(cat:*)",
+      "Bash(taskkill:*)",
+      "Bash(tasklist:*)",
+      "Bash(findstr:*)",
+      "Bash(ping:*)",
+      "Bash(netstat:*)",
+      "Bash(cmd //c taskkill //F //PID 23688)",
+      "Bash(del FiltersSwaggerFileOperationFilter.cs)",
+      "Bash(cmd //c taskkill //F //PID 27944)",
+      "Bash(tar:*)",
+      "Bash(cmd /c taskkill /F /PID 28312)",
+      "Bash(cmd /c taskkill //F //IM BtkCarsApi.exe)",
+      "Bash(powershell -Command:*)",
+      "Bash(del nul)",
+      "Bash(git rm:*)"
     ],
     "deny": [],
     "ask": []

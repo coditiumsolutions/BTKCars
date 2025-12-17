@@ -3,14 +3,14 @@
 .sell-contact-section {
   margin-top: 3rem;
   padding: 3rem 2rem;
-  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  background: #F7BE29;
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(247, 190, 41, 0.4);
 }
 
 .sell-contact-title {
   font-size: 2.5rem;
-  color: #FFD700;
+  color: #000000;
   text-align: center;
   margin-bottom: 0.75rem;
   font-weight: 700;
@@ -18,7 +18,7 @@
 
 .sell-contact-subtitle {
   font-size: 1.125rem;
-  color: #DAA520;
+  color: #000000;
   text-align: center;
   margin-bottom: 2.5rem;
 }
@@ -32,20 +32,20 @@
 }
 
 .sell-contact-card {
-  background-color: rgba(26, 26, 26, 0.95);
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
   border-radius: 12px;
   padding: 2rem;
   text-align: center;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
-  border: 1px solid rgba(255, 215, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 2px solid #000000;
 }
 
 .sell-contact-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(255, 215, 0, 0.4);
-  background-color: rgba(26, 26, 26, 1);
-  border-color: #FFD700;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border-color: #333333;
 }
 
 .sell-contact-icon-wrapper {
@@ -54,27 +54,28 @@
   justify-content: center;
   width: 64px;
   height: 64px;
-  background: linear-gradient(135deg, #FFD700 0%, #DAA520 100%);
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
   border-radius: 50%;
   margin-bottom: 1.25rem;
+  border: 2px solid #F7BE29;
 }
 
 .sell-contact-icon {
   width: 32px;
   height: 32px;
-  color: #000000;
+  color: #F7BE29;
 }
 
 .sell-contact-card-title {
   font-size: 1.25rem;
-  color: #FFD700;
+  color: #F7BE29;
   margin-bottom: 0.75rem;
   font-weight: 700;
 }
 
 .sell-contact-card-text {
   font-size: 0.95rem;
-  color: #B8860B;
+  color: #F7BE29;
   line-height: 1.6;
   margin: 0;
 }
@@ -82,14 +83,14 @@
 .sell-contact-link {
   display: block;
   font-size: 1rem;
-  color: #FFD700;
+  color: #F7BE29;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 .sell-contact-link:hover {
-  color: #FFA500;
+  color: #FFCE4F;
   transform: scale(1.05);
 }
 

@@ -101,12 +101,18 @@ const Footer = () => {
           {/* Services */}
           <div className="footer-section">
             <h4 className="footer-heading">Our Services</h4>
-            <ul className="footer-list">
+            <div className="footer-links">
+              <Link to="/cars-in-bahria-town" className="footer-link">
+                Cars in Bahria Town
+              </Link>
+              <Link to="/sale-purchase-cars-bahria-town" className="footer-link">
+                Sale Purchase Cars
+              </Link>
+            </div>
+            <ul className="footer-list" style={{ marginTop: '1rem' }}>
               <li className="footer-list-item">Vehicle Financing</li>
               <li className="footer-list-item">Trade-In Services</li>
               <li className="footer-list-item">Vehicle Inspection</li>
-              <li className="footer-list-item">Extended Warranty</li>
-              <li className="footer-list-item">Insurance Services</li>
             </ul>
           </div>
 
@@ -166,7 +172,7 @@ const Footer = () => {
                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                   />
                 </svg>
-                <span>Yasirhussainofficial1@gmail.com</span>
+                <span>info@btkcars.com</span>
               </div>
             </div>
           </div>

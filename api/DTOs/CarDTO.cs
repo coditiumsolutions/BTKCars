@@ -52,6 +52,8 @@ namespace BtkCarsApi.DTOs
         public string? FuelType { get; set; }
 
         public string? Description { get; set; }
+
+        public IFormFile? Image { get; set; }
     }
 
     public class UpdateCarRequest
@@ -74,5 +76,7 @@ namespace BtkCarsApi.DTOs
         public string? FuelType { get; set; }
 
         public string? Description { get; set; }
+
+        public IFormFile? Image { get; set; }
     }
 }

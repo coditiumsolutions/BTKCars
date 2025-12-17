@@ -43,12 +43,10 @@ const Dashboard = () => {
   };
 
   const formatCurrency = (value) => {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
+    return new Intl.NumberFormat('en-PK', {
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
-    }).format(value);
+    }).format(value) + ' PKR';
   };
 
   const quickActions = [

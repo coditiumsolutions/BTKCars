@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import '../styles/Pages.css';
 import '../styles/CarDetail.css';
 import { carsApi } from '../services/carsApi';
+import { getServerBaseUrl } from '../services/config';
 
 const CarDetail = () => {
   const { id } = useParams();
@@ -13,7 +14,7 @@ const CarDetail = () => {
 
   // Contact information from footer
   const CONTACT_PHONE = '03353355555';
-  const CONTACT_EMAIL = 'Yasirhussainofficial1@gmail.com';
+  const CONTACT_EMAIL = 'info@btkcars.com';
   const CONTACT_ADDRESS = 'Shop number 5, ZA Heights. Opposite Head Office of BTK, Bahria Town Karachi.';
 
   useEffect(() => {
@@ -35,12 +36,10 @@ const CarDetail = () => {
   }, [id]);
 
   const formatPrice = (price) => {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
+    return new Intl.NumberFormat('en-PK', {
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
-    }).format(price);
+    }).format(price) + ' PKR';
   };
 
   const formatMileage = (mileage) => {
@@ -55,7 +54,7 @@ const CarDetail = () => {
     if (imageUrl.startsWith('http')) {
       return imageUrl;
     }
-    return `http://localhost:5115${imageUrl}`;
+    return `${getServerBaseUrl()}${imageUrl}`;
   };
 
   if (loading) {

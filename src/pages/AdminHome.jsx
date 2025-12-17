@@ -40,16 +40,14 @@ const AdminHome = () => {
     <div className="admin-home">
       <div className="admin-container">
         <div className="admin-header">
-          <h1 className="admin-title">Admin Dashboard</h1>
-          <p className="admin-subtitle">Welcome to the BTK Cars Admin Panel</p>
-
-          <div className="admin-user-info">
+          <div className="admin-header-top">
+            <div>
+              <h1 className="admin-title">Admin Dashboard</h1>
+              <p className="admin-subtitle">Welcome to the BTK Cars Admin Panel</p>
+            </div>
             <div className="user-email">
               Logged in as: <strong>{userEmail}</strong>
             </div>
-            <button onClick={handleLogout} className="logout-btn">
-              Logout
-            </button>
           </div>
         </div>
 

@@ -9,7 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container
 builder.Services.AddControllers();
-builder.Services.AddOpenApi();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 // Configure PostgreSQL Database
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -46,10 +47,21 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp", policy =>
     {
-        policy.WithOrigins("http://localhost:5173", "http://localhost:5174")
+        policy.WithOrigins(
+                "http://localhost:5173",
+                "http://localhost:5174",
+                "http://35.241.90.194",
+                "http://35.241.90.194:80",
+                "https://35.241.90.194",
+                "https://35.241.90.194:443",
+                "https://btkcars.com",
+                "https://www.btkcars.com",
+                "http://btkcars.com",
+                "http://www.btkcars.com")
               .AllowAnyMethod()
               .AllowAnyHeader()
-              .AllowCredentials();
+              .AllowCredentials()
+              .SetIsOriginAllowedToAllowWildcardSubdomains();
     });
 });
 
@@ -61,16 +73,17 @@ var app = builder.Build();
 // Configure the HTTP request pipeline
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
+
+// Use CORS - MUST be early in the pipeline
+app.UseCors("AllowReactApp");
 
 app.UseHttpsRedirection();
 
 // Enable static files (for serving uploaded images)
 app.UseStaticFiles();
-
-// Use CORS
-app.UseCors("AllowReactApp");
 
 // Use Authentication & Authorization
 app.UseAuthentication();

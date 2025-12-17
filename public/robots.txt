@@ -1,0 +1,17 @@
+# BTK Cars - Robots.txt
+# https://btkcars.com/robots.txt
+
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Disallow admin pages from being indexed
+Disallow: /admin/
+Disallow: /adminhome
+Disallow: /login
+
+# Sitemap location
+Sitemap: https://btkcars.com/sitemap.xml
+
+# Crawl-delay for polite crawling (optional)
+Crawl-delay: 1

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import carsApi from '../services/carsApi';
+import { getServerBaseUrl } from '../services/config';
 import '../styles/CarForm.css';
 
 const CarForm = () => {
@@ -48,7 +49,7 @@ const CarForm = () => {
       if (car.imageUrl) {
         const imageUrl = car.imageUrl.startsWith('http')
           ? car.imageUrl
-          : `http://localhost:5115${car.imageUrl}`;
+          : `${getServerBaseUrl()}${car.imageUrl}`;
         setImagePreview(imageUrl);
       }
     } catch (err) {

@@ -4,7 +4,7 @@ import '../styles/Sell.css';
 
 const Sell = () => {
   const CONTACT_PHONE = '03353355555';
-  const CONTACT_EMAIL = 'Yasirhussainofficial1@gmail.com';
+  const CONTACT_EMAIL = 'info@btkcars.com';
   const CONTACT_ADDRESS = 'Shop number 5, ZA Heights. Opposite Head Office of BTK, Bahria Town Karachi.';
 
   return (

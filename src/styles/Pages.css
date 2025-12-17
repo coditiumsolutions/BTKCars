@@ -1,7 +1,7 @@
 /* Common Page Styles */
 .page {
-  min-height: calc(100vh - 80px);
-  padding-top: 80px;
+  min-height: calc(100vh - 167px);
+  padding-top: 167px;
   background-color: var(--bg-light);
 }
 
@@ -18,14 +18,24 @@
 }
 
 .buy-page-title {
-  background-color: #000000;
-  color: var(--accent-gold);
+  background: #F7BE29;
+  color: #000000;
   padding: 0.75rem 1.25rem;
-  border-radius: 10px;
+  border-radius: 12px;
   display: inline-block;
-  border: 2px solid var(--accent-gold);
-  box-shadow: 0 4px 12px rgba(218, 165, 32, 0.3);
+  border: 3px solid #F7BE29;
+  box-shadow: 0 4px 15px rgba(247, 190, 41, 0.4);
   font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.buy-page-title:hover {
+  background: #FFCE4F;
+  border-color: #FFCE4F;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(247, 190, 41, 0.6);
 }
 
 .page-subtitle {

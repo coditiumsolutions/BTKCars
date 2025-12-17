@@ -21,8 +21,16 @@ const TopBar = () => {
   };
 
   return (
-    <div className="topbar">
-      <div className="topbar-container">
+    <>
+      {/* Company Registration Banner */}
+      <div className="company-banner">
+        <div className="company-banner-container">
+          <p className="company-banner-text">BTKCars - Registered Private Limited Company</p>
+        </div>
+      </div>
+
+      <div className="topbar">
+        <div className="topbar-container">
         <div>
           <Link to="/" className="topbar-logo">
             <img src="/logo_bakcars.jpg" alt="BTK Cars" className="topbar-logo-img" />
@@ -64,7 +72,8 @@ const TopBar = () => {
           </div>
         </div>
       )}
-    </div>
+      </div>
+    </>
   );
 };
 

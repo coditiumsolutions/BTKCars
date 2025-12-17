@@ -1,0 +1,35 @@
+[Unit]
+Description=BTK Cars API Service
+After=network.target
+
+[Service]
+Type=notify
+# IMPORTANT: Update the paths and username below
+WorkingDirectory=/home/your_username/btk_cars/api
+ExecStart=/home/your_username/.dotnet/dotnet /home/your_username/btk_cars/api/BtkCarsApi.dll
+
+# Restart configuration
+Restart=always
+RestartSec=10
+KillSignal=SIGINT
+
+# User and group
+User=your_username
+Group=your_username
+
+# Environment variables
+Environment=ASPNETCORE_ENVIRONMENT=Production
+Environment=ASPNETCORE_URLS=http://0.0.0.0:5000
+Environment=DOTNET_ROOT=/home/your_username/.dotnet
+
+# Logging
+SyslogIdentifier=btkcars-api
+StandardOutput=journal
+StandardError=journal
+
+# Security settings (optional but recommended)
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

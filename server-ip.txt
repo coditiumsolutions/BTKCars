@@ -1,0 +1,2 @@
+LOCAL_API=http://localhost:5115
+SERVER_API=http://35.241.90.194:5000

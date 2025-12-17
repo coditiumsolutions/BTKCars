@@ -99,16 +99,16 @@ namespace BtkCarsApi.Controllers
 
         // POST: api/cars
         [HttpPost]
-        public async Task<ActionResult<CarDTO>> CreateCar([FromForm] CreateCarRequest request, [FromForm] IFormFile? image)
+        public async Task<ActionResult<CarDTO>> CreateCar([FromForm] CreateCarRequest request)
         {
             try
             {
                 string? imageUrl = null;
 
                 // Handle image upload
-                if (image != null && image.Length > 0)
+                if (request.Image != null && request.Image.Length > 0)
                 {
-                    imageUrl = await SaveImage(image);
+                    imageUrl = await SaveImage(request.Image);
                 }
 
                 var car = new Car
@@ -154,7 +154,7 @@ namespace BtkCarsApi.Controllers
 
         // PUT: api/cars/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateCar(long id, [FromForm] UpdateCarRequest request, [FromForm] IFormFile? image)
+        public async Task<IActionResult> UpdateCar(long id, [FromForm] UpdateCarRequest request)
         {
             try
             {
@@ -166,7 +166,7 @@ namespace BtkCarsApi.Controllers
                 }
 
                 // Handle image upload
-                if (image != null && image.Length > 0)
+                if (request.Image != null && request.Image.Length > 0)
                 {
                     // Delete old image if exists
                     if (!string.IsNullOrEmpty(car.ImageUrl) && !car.ImageUrl.StartsWith("http"))
@@ -174,7 +174,7 @@ namespace BtkCarsApi.Controllers
                         DeleteImage(car.ImageUrl);
                     }
 
-                    car.ImageUrl = await SaveImage(image);
+                    car.ImageUrl = await SaveImage(request.Image);
                 }
 
                 car.Make = request.Make;

@@ -1,10 +1,10 @@
-const API_BASE_URL = 'http://localhost:5115/api';
+import { getApiBaseUrl } from './config';
 
 export const carsApi = {
   // Get all cars
   getAllCars: async () => {
     try {
-      const response = await fetch(`${API_BASE_URL}/cars`);
+      const response = await fetch(`${getApiBaseUrl()}/cars`);
       if (!response.ok) throw new Error('Failed to fetch cars');
       return await response.json();
     } catch (error) {
@@ -16,7 +16,7 @@ export const carsApi = {
   // Get single car
   getCar: async (id) => {
     try {
-      const response = await fetch(`${API_BASE_URL}/cars/${id}`);
+      const response = await fetch(`${getApiBaseUrl()}/cars/${id}`);
       if (!response.ok) throw new Error('Failed to fetch car');
       return await response.json();
     } catch (error) {
@@ -39,7 +39,7 @@ export const carsApi = {
       if (carData.description) formData.append('description', carData.description);
       if (imageFile) formData.append('image', imageFile);
 
-      const response = await fetch(`${API_BASE_URL}/cars`, {
+      const response = await fetch(`${getApiBaseUrl()}/cars`, {
         method: 'POST',
         body: formData,
       });
@@ -66,7 +66,7 @@ export const carsApi = {
       if (carData.description) formData.append('description', carData.description);
       if (imageFile) formData.append('image', imageFile);
 
-      const response = await fetch(`${API_BASE_URL}/cars/${id}`, {
+      const response = await fetch(`${getApiBaseUrl()}/cars/${id}`, {
         method: 'PUT',
         body: formData,
       });
@@ -82,7 +82,7 @@ export const carsApi = {
   // Delete car
   deleteCar: async (id) => {
     try {
-      const response = await fetch(`${API_BASE_URL}/cars/${id}`, {
+      const response = await fetch(`${getApiBaseUrl()}/cars/${id}`, {
         method: 'DELETE',
       });
 
